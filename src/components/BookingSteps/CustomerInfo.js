@@ -8,7 +8,7 @@ const CustomerInfo = ({
   selectedDate, 
   selectedTime, 
   availableDates, 
-  onPrev, 
+  onPrev,  // ensure this function is passed from parent
   onBooking, 
   canProceed 
 }) => {
@@ -40,12 +40,7 @@ const CustomerInfo = ({
             placeholder="Full Name"
             value={customerInfo.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
-            className="
-              w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl 
-              border-2 border-transparent focus:border-pink-400 focus:outline-none 
-              transition-all duration-300 text-gray-800 placeholder-gray-500
-              focus:shadow-lg focus:bg-white
-            "
+            className="w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl border-2 border-transparent focus:border-pink-400 focus:outline-none transition-all duration-300 text-gray-800 placeholder-gray-500 focus:shadow-lg focus:bg-white"
           />
         </div>
         
@@ -57,12 +52,7 @@ const CustomerInfo = ({
             placeholder="Email Address"
             value={customerInfo.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
-            className="
-              w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl 
-              border-2 border-transparent focus:border-pink-400 focus:outline-none 
-              transition-all duration-300 text-gray-800 placeholder-gray-500
-              focus:shadow-lg focus:bg-white
-            "
+            className="w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl border-2 border-transparent focus:border-pink-400 focus:outline-none transition-all duration-300 text-gray-800 placeholder-gray-500 focus:shadow-lg focus:bg-white"
           />
         </div>
         
@@ -74,12 +64,7 @@ const CustomerInfo = ({
             placeholder="Phone Number"
             value={customerInfo.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
-            className="
-              w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl 
-              border-2 border-transparent focus:border-pink-400 focus:outline-none 
-              transition-all duration-300 text-gray-800 placeholder-gray-500
-              focus:shadow-lg focus:bg-white
-            "
+            className="w-full pl-12 pr-4 py-4 bg-white/90 rounded-xl border-2 border-transparent focus:border-pink-400 focus:outline-none transition-all duration-300 text-gray-800 placeholder-gray-500 focus:shadow-lg focus:bg-white"
           />
         </div>
 
@@ -126,13 +111,13 @@ const CustomerInfo = ({
             />
             <span>
               I agree to the{' '}
-              <a href="#" className="text-pink-300 hover:text-pink-200 underline">
+              <button type="button" className="text-pink-300 hover:text-pink-200 underline">
                 terms and conditions
-              </a>{' '}
+              </button>{' '}
               and{' '}
-              <a href="#" className="text-pink-300 hover:text-pink-200 underline">
+              <button type="button" className="text-pink-300 hover:text-pink-200 underline">
                 cancellation policy
-              </a>
+              </button>
             </span>
           </label>
         </div>
@@ -142,11 +127,7 @@ const CustomerInfo = ({
       <div className="flex justify-between items-center">
         <button
           onClick={onPrev}
-          className="
-            bg-white/20 text-white px-6 py-3 rounded-full font-bold
-            hover:bg-white/30 transition-all duration-300
-            flex items-center space-x-2 transform hover:scale-105
-          "
+          className="bg-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white/30 transition-all duration-300 flex items-center space-x-2 transform hover:scale-105"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back to Time</span>
@@ -155,14 +136,7 @@ const CustomerInfo = ({
         {canProceed ? (
           <button
             onClick={onBooking}
-            className="
-              bg-gradient-to-r from-green-500 to-emerald-500 text-white 
-              px-8 py-4 rounded-full font-bold text-lg
-              transform transition-all duration-300 hover:scale-105 hover:shadow-2xl
-              flex items-center space-x-2
-              ring-2 ring-green-400/30 hover:ring-green-400/50
-              animate-pulse hover:animate-none
-            "
+            className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-full font-bold text-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-2 ring-2 ring-green-400/30 hover:ring-green-400/50 animate-pulse hover:animate-none"
           >
             <Sparkles className="w-5 h-5" />
             <span>Confirm Booking</span>
